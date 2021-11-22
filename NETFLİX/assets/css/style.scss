@@ -1,0 +1,695 @@
+/******
+    Kasım Şahin
+    ig:      kasimsahinn
+    website: kasimsahin.com 
+*****/
+
+
+@font-face {
+    font-family: netflix;
+    src: url(../fonts/nflogo.woff2);
+  }
+
+
+
+$background-color: #141414;
+$white: #ffffff;
+$color-1: #808080;
+
+$tabletyty: 1199px;
+$tabletdky: 991px;
+$mobilebyk:767px;
+$mobilemini:360px;
+
+body{
+    font-family: "netflix";
+    color: $white;
+    background-color: $background-color;
+    .navbar-section{
+        width: 100%;
+        .navbar{
+            background-image: url(../img/nav-shadow.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 9vh;
+            padding: 0 3.5%;
+            .logo{
+
+                height: auto;
+                align-items: center;
+                a{
+                    img{
+                        width: 6.2rem;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+        .home-navbar{
+            transition: 0.3s ease;
+            z-index: 999;
+            background-color: transparent;
+            box-sizing: border-box;
+            position: fixed;
+            width: 100%;
+            .logo{
+                display: flex;
+                align-items: center;
+                a{
+                    margin-left: 20px;
+                }
+                div{
+                    ul{
+                        color: $white;
+                        display: flex;
+                        align-items: center;
+                        li{
+                            margin: 0 7px;
+                            a{
+                                font-size: 0.8rem;
+                                color: $white;
+
+                            }
+                        }
+                    }
+                }
+            }
+            .categories{
+                ul{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    li{
+                        text-align: center;
+                        width: 10%;
+                        margin: 0 0px;
+                        font-size: 1.3rem;
+                        display: flex;
+                        align-items: center;
+                        a{
+                            color: $white;
+                            
+                        }
+                    }
+                    .user-img-dropdown{
+                        .rotate{
+                            transform: rotate(180deg);
+                            transition: 0.3s ease;
+                        }
+                        img{
+                            border-radius: 4px;
+                            margin-right: 5px;
+                            width: 80%;
+                        }
+                        i{
+                            transition: 0.3s ease;
+                        }
+                        div{
+                            display: none;
+                            background-color: rgba(0,0,0,.9);
+                            color: $white;
+                            position: absolute;
+                            width: 12%;
+                            height: auto;
+                            top: 90%;
+                            right: 2.5%;
+                            transition: 0.6s ease;
+                            ul{
+                                padding: 10px 5px;
+                                width: auto;
+                                display: block;
+                                li{
+                                    width: auto;
+                                    cursor: pointer;
+                                    font-size: 0.8rem;
+                                    padding: 5px 10px;
+                                    display: flex;
+                                    img{
+                                        width: 24%;
+                                    }
+                                }
+                            }
+                        }
+                        .dropdown-open{
+                            transition: 0.6s ease;
+                            display: block !important;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
+        
+    }
+    .banner-section{
+        .banner{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 90vh;
+            .user-info{
+                margin: 17vh auto;
+                .title{
+                    margin-bottom: 40px;
+                    h1{
+                        letter-spacing: 2px;
+                        font-size: 3rem;
+                    }
+                    @media (max-width: $mobilebyk) {
+                        h1{
+                            font-size: 2rem;
+                        }
+                    }
+                }
+                .user-image-replace{
+                   
+                    ul{
+                        
+                        li{
+                            position: relative;
+                            i{
+                                cursor: pointer;
+                                left: 50%;
+                                top: 40%;
+                                transform: translate(-50%,-50%);
+                                border: 2px solid $white;
+                                border-radius: 50%;
+                                padding: 5px;
+                                position: absolute;
+                                font-size: 0.9rem;
+                                color: $white;
+                            }
+                            a{
+                                
+                                img{
+                                    filter: opacity(0.4);
+                                }
+
+                            }
+                        }
+                        
+                    }
+                }
+                .user-image{
+                    
+                    ul{
+                       
+                        display: flex;
+                        align-items: inherit;
+                        justify-content: center;
+                        li{
+                        margin: 0 10px;
+
+                            &:hover{
+                                a{
+                                    color: $white;
+                                    img{
+                                        box-sizing: border-box;
+                                        border: 2px solid $white;
+                                    }
+                                }
+                            }
+                            a{
+                                color: $color-1;
+                                font-size: 1.2rem;
+                                img{
+                                    box-sizing: border-box;
+                                    border-radius: 4px;
+                                    width: 9rem;
+                                }
+                                p{
+                                    padding-top: 10px;
+                                }
+                            }
+                            
+                        }
+                        @media (max-width: $mobilebyk) {
+                            display: grid ;
+                            grid-template-columns: 32% 32% 32%;
+                            grid-template-rows: auto, auto;
+                            grid-gap: 2%;
+                            li{
+                                a{
+                                    img{
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+
+            }
+            .user-change-button{
+                cursor: pointer;
+                width: 100%;
+                margin-top: 50px;
+               
+                button{
+                    cursor: pointer;
+                    width: 22%;
+                    border: 1px solid $color-1;
+                    background: transparent;
+                    color: $color-1;
+                    letter-spacing: 2px;
+                    font-size: 1rem;
+                    padding: 10px;
+                    a{
+                        color: $color-1;
+                    }
+                }
+                &:hover{
+                    button{
+                        border-color: $white ;
+                        color: $white;
+                        a{
+                            color: $white;
+                        }
+                    }
+                }
+                @media (max-width: $mobilebyk) {
+                    margin-top: 15%;
+                    button{
+                        width: auto;
+                    }
+                }
+            }
+            .user-manage-button{
+                button{
+                    background-color: $white;
+                    border: none;
+                    color: $background-color;
+                    font-weight: 900;
+                    width: 17%;
+                    a{
+                        color: $background-color;
+                    }
+                }
+                &:hover{
+                    button{
+                        background-color: #E50914;
+                        a{
+                            color: $white;
+                        }
+                    }
+                }
+                @media (max-width: $mobilebyk) {
+                    margin-top: 15%;
+                    button{
+                        width: auto;
+                    }
+                }
+            }
+            .info-manage{
+                .info-navbar{
+                    text-align: left ;
+                    h1{
+                        font-size: 3.4rem;
+                        font-weight: 400;
+                    }
+                    @media (max-width: $mobilebyk) {
+                        h1{
+                            font-size: 2.4rem;
+                            font-weight: 400;
+                        }
+                    }
+                }
+                .info-banner{
+                    border-top: 1px solid #333;
+                    border-bottom: 1px solid #333;
+                    padding: 20px 0 10px 0;
+                    div{
+                        &:nth-child(1){
+                            text-align: left;
+                            img{
+                                width: 80%;
+                                margin-left: 0;
+                                border-radius: 4px ;
+                            }
+                        }
+                        &:nth-child(2){
+                            text-align: left;
+                            ul{
+                                li{
+                                    &:nth-child(1){
+                                        div{
+                                            &:nth-child(1){
+                                                input[type=text]{
+                                                    width: 65%;
+                                                    background-color: #666;
+                                                    color: $white;
+                                                    border: 1px solid transparent;
+                                                    padding: 9.09px 9.6px;
+                                                    &:focus{
+                                                        outline: none;
+                                                    }
+                                                }
+                                            }
+                                            &:nth-child(2){
+                                                padding: 30px 0;
+                                                p{
+                                                    color: #ccc;
+                                                    font-size: .9rem;
+                                                    letter-spacing: 1.2px;
+                                                }
+                                                select{
+                                                    background-color: #000;
+                                                    color: $white;
+                                                    border: 1px solid rgba(255,255,255,.9);
+                                                    margin-top: 5px;
+                                                    padding: 1px 9px;
+                                                }
+                                            }
+                                            
+                                        }
+                                    }
+                                    &:nth-child(2){
+                                       
+                                        padding: 20px 0px 30px 0;
+                                        border-top: 1px solid #333;
+                                        border-bottom: 1px solid #333;
+                                        font-size: .8rem;
+                                        h5{
+                                            color: #ccc;
+                                            font-size: 1.1rem;
+                                            padding-bottom: 15px ;
+                                            font-weight: normal;
+                                        }
+                                        span{
+                                            font-size: .9rem;
+                                            border: 1px solid transparent;
+                                            background-color: #333;
+                                            padding: 5px 10px;
+                                            border-radius: 2px;
+                                        }
+                                        p{
+                                            padding: 15px 0 30px 0;
+                                        }
+                                        a{
+                                            margin-top: 10px;
+                                            color: $color-1;
+                                            padding:5.9px 17.8px ;
+                                            letter-spacing: 2.2px;
+                                            border: 1px solid $color-1;
+                                            &:hover{
+                                                border-color: $white;
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                    &:nth-child(3){
+                                        padding: 20px 0px 10px 0;
+                                        font-size: .8rem;
+                                        h5{
+                                            color: #ccc;
+                                            font-size: 1.1rem;
+                                            padding-bottom: 15px ;
+                                            font-weight: normal;
+                                        }
+                                        div{
+                                            padding: 0px 0;
+                                            display: flex;
+                                            align-items: center;
+                                            
+                                            label{
+                                                display: flex;
+                                                align-items: center;
+                                                height: 25px;
+                                                position: relative;
+                                                padding-left: 35px;
+                                                padding-bottom: 0;
+                                                margin-bottom: 12px;
+                                                cursor: pointer;
+                                                font-size: .6rem;
+                                                user-select: none;
+                                                .dot{
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0;
+                                                    height: 25px;
+                                                    width: 25px;
+                                                    background-color: transparent;
+                                                    &::after{
+                                                        left: 9px;
+                                                        top: 5px;
+                                                        width: 5px;
+                                                        height: 10px;
+                                                        border: solid white;
+                                                        border-width: 0 3px 3px 0;
+                                                        -webkit-transform: rotate(45deg);
+                                                        -ms-transform: rotate(45deg);
+                                                        transform: rotate(45deg);
+                                                    }
+                                                }
+                                                input{
+                                                    position: absolute;
+                                                    opacity: 1;
+                                                    cursor: pointer;
+                                                    width: 0px;
+                                                    height: 0px;
+                                                   &:checked{
+                                                       
+                                                       ~ .dot{
+                                                        background-color: transparent;
+                                                        i{
+                                                            display: block;
+                                                        }
+                                                       }
+                                                   }
+                                                        
+                                                }
+                                                span{
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0;
+                                                    height: 25px;
+                                                    width: 25px;
+                                                    background-color: transparent;
+                                                    border:1px solid #333 ;
+                                                    i{
+                                                        color: #99a1a7;
+                                                        padding-top: 2px;
+                                                        font-size: 1.2rem;
+                                                        display: none;
+                                                        width: 100%;
+                                                        height: auto;
+                                                        text-align: center;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .info-footer{
+                    display: flex;
+                    align-items: center;
+                    div{
+                        margin: 20px 20px 20px 0;
+                        button{
+                            cursor: pointer;
+                            padding:7px 21px;
+                            border-radius: 0px;
+                            border: 1px solid $color-1;
+                            background-color: transparent;
+                            color: $color-1;
+                            font-size: 1rem;
+                            letter-spacing: 1.2px;
+                            &:hover{
+                                color: $white;
+                                border-color: $white;
+                            }
+                        }
+                        #saveBtn{
+                            border: none;
+                            background-color: $white;
+                            color: $background-color;
+                            font-weight: normal;
+                            &:hover{
+                                background-color: #E50914;
+                                color: $white;
+                            }
+                        }
+                    }
+                    @media (max-width: $mobilebyk) {
+                        div{
+                            button{
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .home-banner{
+            @media (max-width: $mobilebyk) {
+                display: none !important;
+            }
+            div{
+                .full-img{
+                    video{
+                        width: 100%;
+                    }
+                    img{
+                        &:nth-child(1){
+                            width: 100%;
+                        }
+                        &:nth-child(2){
+                            position: absolute;
+                            left: 4%;
+                            width: 36%;
+                            top: 15%;
+                        }
+                    }
+                    p{
+                        box-sizing: border-box;
+                        position: absolute;
+                        left: 5%;
+                        width: 36%;
+                        top: 42%;
+                        text-align: left;
+                        font-size: 1.1rem;
+                    }
+                    div{
+                        display: flex;
+                        align-items: center;
+                        box-sizing: border-box;
+                        position: absolute;
+                        left: 5%;
+                        width: 36%;
+                        top: 53%;
+                        text-align: left;
+                        font-size: 1.1rem;
+                        button{
+                            cursor: pointer;
+                            &:nth-child(1){
+                                border: none;
+                                padding: 10px 20px;
+                                border-radius: 5px;
+                                font-size: 1.2rem;
+                                margin-right: 20px;
+                                i{
+                                    padding-right: 5px;
+                                }
+                            }
+                            &:nth-child(2){
+                                border: none;
+                                padding: 10px 20px;
+                                border-radius: 5px;
+                                font-size: 1.2rem;
+                                background-color: rgba(109, 109, 110, 0.7);
+                                color: $white;
+                                i{
+                                    padding-right: 5px;
+                                    font-size: 1.4rem;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                .movie-list-section{
+                    margin-top: -9%;
+                    .movie-list{
+                        &:hover{
+                            .swiper-button-prev,
+                            .swiper-button-next{
+                                transition: 0.3s ease;                                
+                            }
+                        }
+                        .swiper-button-prev,
+                        .swiper-button-next{
+                            color: $white;
+                            background: rgba(20,20,20,.5);
+                            opacity: 0;
+                            z-index: 7 !important;
+                            height: 70%;
+                            width: 3%;
+                            top: 35%;
+                        }
+                        .swiper-button-prev{
+                            &:hover{
+                                background: rgba(20,20,20,.7);
+                                width: 5%;
+                                opacity: 1;
+                            }
+                            left: 0;
+                        }
+                        .swiper-button-next{
+                            &:hover{
+                                background: rgba(20,20,20,.7);
+                                width: 5%;
+                                opacity: 1;
+                            }
+                            right: 0;
+                        }
+                        padding: 10px 0;
+                        width: 100%;
+                        .movie-list-title{
+                            margin-left: 5%;
+                            text-align: left;
+                            width: auto;
+                            h3{
+                                padding: 5px 0;
+                                font-size: 1.3rem;
+                            }
+                        }
+                        ul{
+                            position: relative;
+                            z-index: 6;
+
+                            li{
+                                filter: alpha(opacity=75);
+                                position: relative;
+                                &:hover{
+                                    transition: 0.4s ease;
+                                    position: relative;
+                                    z-index: 999 !important;
+                                    transform: scale(1.2);
+                                    
+                                    a{
+                                       
+                                        z-index: 9;
+                                        img{
+                                            z-index: 4;
+                                        }
+                                        .chart{
+                                            display: block;
+                                            z-index: 9;
+                                        }
+                                    }
+                                }
+                                a{
+
+                                    img{
+                                        object-fit: cover;
+                                        width: 100%;
+                                        border-radius: 4px;
+                                        z-index: 1;
+                                    }
+                                    .chart{
+                                        z-index: 99;
+                                        border: 1px solid red;
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

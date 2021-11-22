@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="icon" href="assets/img/icon-favicon/favicon.ico">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="assets/css/ksahin.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="container navbar-section banner-section">
+        <div class="navbar row">
+            <div class="logo col-1">
+                <a href="#">
+                    <img src="assets/img/icon-favicon/nflogo.png" alt="">
+                </a>
+            </div>
+    
+            <div class="categories col-9">
+    
+            </div>
+        </div>
+
+        <div class="banner row">
+            <div class="col-7 col-s-12 user-info">
+                <div class="title">
+                    <h1>Kim izliyor?</h1>
+                </div>
+                <div class="user-image user-change-name">
+                    <ul>
+                        <li>
+                            <a href="home.html">
+                                <img class="Yusuf" src="assets/img/browse-img/user-image-4.png" alt="">
+                                <p id="i1">Yusuf</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home.html">
+                                <img src="assets/img/browse-img/user-image-3.png" alt="">
+                                <p id="i2">Kasım</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home.html">
+                                <img src="assets/img/browse-img/user-img-1.png" alt="">
+                                <p id="i3">Uğur</p>
+                            </a>
+                            
+                        </li>
+                        <li>
+                            <a href="home.html">
+                                <img src="assets/img/browse-img/user-image-5.png" alt="">
+                                <p id="i4">Kazım</p>
+                            </a>
+                            
+                        </li>
+                        <li>
+                            <a href="home.html">
+                                <img src="assets/img/browse-img/user-image-2.png" alt="">
+                                <p id="i5">Alican</p>
+                            </a>
+                            
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="user-change-button">
+                    <button>
+                        <a href="manageprofile.html">
+                            Profil Yönetimi
+                        </a>
+                        
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $( ".user-image ul li a  , .user-image ul li i"  ).click(function() {
+                var datam = $(this).find("img").attr("src");
+                var datam2 = $(this).find("p").text();
+                
+                
+                localStorage.setItem("userImg" , datam) 
+                localStorage.setItem("userName", datam2)
+            });
+        });
+    </script>
+</body>
+</html>
